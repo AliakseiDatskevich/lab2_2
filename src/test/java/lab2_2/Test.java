@@ -8,10 +8,13 @@ import pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage.Id;
 public class Test {
 
     @org.junit.Test
-    public void clientDataIDtest() {
-        Id id1 = new Id("1234");
-        ClientData client1 = new ClientData(id1, "Ivan");
-        System.out.println(client1.getAggregateId() + client1.getName() + id1.hashCode());
+    public void chechHashAndgeneratedID() {
+        Id id1;
+        System.out.println(id1 = Id.generate());
+        ClientData client1 = new ClientData(id1, "Vitya");
         assertEquals(client1.getAggregateId() + client1.getName() + id1.hashCode(), "1234Ivan1509442");
+
+        // System.out.println(client1.getAggregateId() + client1.getName() + id1.hashCode());
+        // assertEquals(client1.getAggregateId() + client1.getName() + id1.hashCode(), "1234Ivan1509442");
     }
 }

@@ -14,24 +14,16 @@ package pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage;
 
 public class ClientData {
 
-    private static Id aggregateId;
+    private Id aggregateId;
 
-    private static String name;
+    private String name;
 
     @SuppressWarnings("unused")
     private ClientData() {}
 
     public ClientData(Id aggregateId, String name) {
-        ClientData.aggregateId = aggregateId;
-        ClientData.name = name;
-    }
-
-    public static void setAggregateId(Id aggregateId) {
-        ClientData.aggregateId = aggregateId;
-    }
-
-    public static void setName(String name) {
-        ClientData.name = name;
+        this.aggregateId = aggregateId;
+        this.name = name;
     }
 
     public Id getAggregateId() {
